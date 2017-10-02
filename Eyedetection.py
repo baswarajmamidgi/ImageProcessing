@@ -14,7 +14,7 @@ cap = cv2.VideoCapture(0)
 while 1:
     ret, img = cap.read()
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    eyes = eye_cascade.detectMultiScale(gray,50,50)
+    eyes = eye_cascade.detectMultiScale(gray,20,20)
 
     for (x, y, w, h) in eyes:
         cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
